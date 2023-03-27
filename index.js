@@ -14,7 +14,7 @@ const init = async () => {
   if (products) {
     // add products to the store
     setupStore(products);
-    console.log(store);
+    // console.log(store);
   }
 };
 window.addEventListener("DOMContentLoaded", init);
