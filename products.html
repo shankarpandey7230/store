@@ -129,11 +129,36 @@
     </div>
     <!-- products -->
     <section class="products">
-      <div class="filters"></div>
+      <div class="filters">
+        <!-- search -->
+        <form class="input-form">
+          <input type="text" class="search-input" placeholder="search..." />
+        </form>
+        <!-- categories -->
+        <h4>Company</h4>
+        <artice class="companies">
+          <button class="company-btn">all</button>
+          <button class="company-btn">ikea</button>
+        </artice>
+        <!-- price -->
+        <h4>price</h4>
+        <form class="price-form">
+          <input
+            type="range"
+            class="price-filter"
+            min="0"
+            value="50"
+            max="100"
+          />
+        </form>
+      </div>
       <!-- products -->
       <div class="products-container"></div>
     </section>
     <!-- page loading -->
+    <div class="page-loading">
+      <h2>Loading...</h2>
+    </div>
     <script type="module" src="./src/pages/products.js"></script>
   </body>
 </html>

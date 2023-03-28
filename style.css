@@ -646,9 +646,43 @@ Products Page
   margin: 1.5rem 0 0.5rem;
 }
 
+.search-input {
+  padding: 0.5rem;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  border-color: transparent;
+  letter-spacing: var(--spacing);
+}
+.search-input::placeholder {
+  text-transform: capitalize;
+}
+.company-btn {
+  display: block;
+  margin: 0.25em 0;
+  padding: 0.25rem;
+  text-transform: capitalize;
+  background: transparent;
+  border-color: transparent;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.company-btn:hover {
+  color: --clr-grey-3;
+}
+.price-filter {
+  background: var(--clr-grey-5);
+  color: var(--clr-grey-5);
+}
+
 @media screen and (min-width: 768px) {
   .products {
     grid-template-columns: 200px 1fr;
+  }
+  .categories {
+    position: sticky;
+    top: 1rem;
   }
 }
 @media screen and (min-width: 992px) {
