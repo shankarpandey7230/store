@@ -530,7 +530,11 @@ Title
   font-size: 0.85em;
   margin-right: 1rem;
 }
-/* product  */
+/*
+=============== 
+product
+===============
+*/
 .product-img {
   height: 15rem;
   object-fit: cover;
@@ -582,6 +586,7 @@ Title
   color: var(--clr-grey-3);
   font-weight: 700;
 }
+
 .featured-center {
   margin: 3rem auto 2rem auto;
   display: grid;
@@ -595,7 +600,6 @@ Title
   margin: 0 auto;
   text-align: center;
 }
-
 @media screen and (min-width: 992px) {
   .featured-center {
     display: grid;
@@ -621,4 +625,16 @@ About Page
   max-width: 45em;
   margin: 0 auto;
   margin-top: 2rem;
+}
+
+/* single product page */
+.page-hero {
+  min-height: 20vh;
+  display: grid;
+  place-items: center;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-5);
+}
+.page-hero-title {
+  font-weight: 500;
 }
