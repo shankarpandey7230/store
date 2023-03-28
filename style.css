@@ -627,6 +627,42 @@ About Page
   margin-top: 2rem;
 }
 
+/*
+=============== 
+Products Page
+===============
+*/
+.products {
+  width: 90vw;
+  display: grid;
+  grid-gap: 1rem;
+  margin: 4rem auto;
+  max-width: var(--max-width);
+  position: relative;
+}
+
+.filters h4 {
+  font-weight: 500;
+  margin: 1.5rem 0 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .products {
+    grid-template-columns: 200px 1fr;
+  }
+}
+@media screen and (min-width: 992px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 /* single product page */
 .page-hero {
   min-height: 20vh;
