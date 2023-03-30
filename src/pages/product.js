@@ -25,7 +25,21 @@ let productID;
 window.addEventListener("DOMContentLoaded", async function () {
   const urlID = window.location.search;
   // console.log(urlID);
-  const response = await fetch(`${singleProductUrl}${urlID}`);
-  console.log(response);
+  try {
+    const response = await fetch(`${singleProductUrl}${urlID}`);
+    // console.log(response);
+    if (response.status >= 200 && response.status <= 299) {
+      const product = await response.json();
+    } else {
+      console.log(response.status, response.statusText);
+      centerDOM.innerHTML = `
+      <div>
+      <h3 class= "error">Something is not correct</h3>
+      <a href ="index.html" class="btn"></a>
+      </div>`;
+    }
+  } catch (error) {
+    console.log(error);
+  }
   loading.style.display = "none";
 });
