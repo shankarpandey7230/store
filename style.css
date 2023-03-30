@@ -640,7 +640,10 @@ Products Page
   max-width: var(--max-width);
   position: relative;
 }
-
+.filters-container {
+  position: sticky;
+  top: 1rem;
+}
 .filters h4 {
   font-weight: 500;
   margin: 1.5rem 0 0.5rem;
@@ -669,13 +672,12 @@ Products Page
   transition: var(--transition);
 }
 .company-btn:hover {
-  color: --clr-grey-3;
+  color: var(--clr-grey-3);
 }
 .price-filter {
-  background: var(--clr-grey-5);
+  background: var(--clr-grey-5) !important;
   color: var(--clr-grey-5);
 }
-
 @media screen and (min-width: 768px) {
   .products {
     grid-template-columns: 200px 1fr;
@@ -691,13 +693,34 @@ Products Page
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+  .products-container .product-img {
+    height: 10rem;
+  }
+  .products-container .product-name {
+    font-size: 0.85rem;
+  }
+  .products-container .product-price {
+    font-size: 0.85rem;
+  }
 }
 @media screen and (min-width: 1170px) {
   .products-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* single product page */
+.filter-error {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 4rem;
+}
+/*
+=============== 
+Single Product Page
+===============
+*/
 .page-hero {
   min-height: 20vh;
   display: grid;
@@ -707,4 +730,48 @@ Products Page
 }
 .page-hero-title {
   font-weight: 500;
+}
+.single-product {
+  padding: 2rem 0;
+}
+.single-product-center {
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem 2rem;
+}
+.single-product-img {
+  height: 25rem;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+.single-product-company {
+  font-size: 1.2rem;
+  color: var(--clr-grey-8);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  margin-bottom: 1.25rem;
+}
+.single-product-price {
+  color: var(--clr-grey-3);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.product-color {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #222;
+  margin: 0.5rem 0.5rem 1.5rem 0;
+}
+
+.single-product-desc {
+  max-width: 25em;
+  line-height: 1.8;
+}
+@media screen and (min-width: 992px) {
+  .single-product-center {
+    grid-template-columns: 1fr 1fr;
+  }
 }
