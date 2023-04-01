@@ -24,25 +24,21 @@ let productID;
 // show product when page loads
 window.addEventListener("DOMContentLoaded", async function () {
   const urlID = window.location.search;
-  // console.log(urlID);
+
   try {
     const response = await fetch(`${singleProductUrl}${urlID}`);
-    // console.log(response);
     if (response.status >= 200 && response.status <= 299) {
       const product = await response.json();
-      // console.log(product);
-
-      // getting data
+      // grab data
       const { id, fields } = product;
       productID = id;
 
       const { name, company, price, colors, description } = fields;
       const image = fields.image[0].thumbnails.large.url;
+      // set values
 
-      // setting datas
-
-      this.document.title = `${name.toUpperCase()} |Comfy`;
-      pageTitleDOM.textContent = `Home/${name}`;
+      document.title = `${name.toUpperCase()} | Comfy`;
+      pageTitleDOM.textContent = `Home / ${name}`;
       imgDOM.src = image;
       titleDOM.textContent = name;
       companyDOM.textContent = `by ${company}`;
@@ -57,14 +53,16 @@ window.addEventListener("DOMContentLoaded", async function () {
     } else {
       console.log(response.status, response.statusText);
       centerDOM.innerHTML = `
-      <div>
-      <h3 class= "error">Something is not correct</h3>
-      <a href ="index.html" class="btn"></a>
-      </div>`;
+    <div>
+    <h3 class="error">sorry, something went wrong</h3>
+    <a href="index.html" class="btn">back home</a>
+    </div> 
+     `;
     }
   } catch (error) {
     console.log(error);
   }
+
   loading.style.display = "none";
 });
 
